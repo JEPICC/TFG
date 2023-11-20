@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  mongo: 
+    image: mongo:7.0.3
+    ports:
+      - '27017:27017'
+
+  backend:
+    build: ./Backend
+    ports:
+    - "8000:8000"
+    depends_on:
+      - mongo
+    environment:
+      - MONGODB_HOST=mongo
+      - MONGODB_PORT=27017
+
+
+  

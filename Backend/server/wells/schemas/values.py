@@ -25,15 +25,15 @@ class Values(BaseModel):
         json_schema_extra=schema_descrption
     )
 
-# class ValuesResponse(BaseModel):
-#     idmedidor : Optional[str] = None
-#     timestamp : Optional[datetime] = None
-#     value: Optional[float] = None
-#     estado: Optional[bool] = None
+class ValuesResponse(BaseModel):
+    idmedidor : Optional[str] = None
+    timestamp : Optional[datetime] = None
+    value: Optional[float] = None
+    estado: Optional[bool] = None
    
-#     model_config = ConfigDict(
-#         arbitrary_types_allowed=True,
-#         json_encoders={ObjectId: str},
-#         json_schema_extra=schema_descrption,
-#     )
+    model_config = ConfigDict(
+        arbitrary_types_allowed=True,
+        json_encoders={ObjectId: str},
+        json_schema_extra=schema_descrption,
+    )
 

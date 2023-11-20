@@ -2,9 +2,10 @@ from contextlib import asynccontextmanager
 from server.database import db
 from decouple import config
 from fastapi import FastAPI, Request
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.exceptions import ResponseValidationError
+from server.users.router import users
 from server.wells.routers.wells import wells
 from server.wells.routers.meters import meters
 from server.wells.routers.values import values
@@ -32,6 +33,7 @@ app.add_middleware(
     # allow_headers=['*']
 )
 
+app.include_router(users)
 app.include_router(wells)
 app.include_router(meters)
 app.include_router(values)
@@ -40,6 +42,6 @@ app.include_router(services)
 
 @app.get('/')
 def home():
-    return dict(message='Server API')
+    return RedirectResponse(url='/docs')
 
 

@@ -1,5 +1,6 @@
 import logging
 from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase
+from server.config import setting
 
 class MongoManager():
     client: AsyncIOMotorClient = None
@@ -8,10 +9,10 @@ class MongoManager():
 
     # def connect_to_database(self):
     def __init__(self):
-        logging.info("Connecting to MongoDB.")
+        logging.info("Connecting to MongoDB.")        
         try:
             if self.client is None:
-                self.client = AsyncIOMotorClient('mongodb://localhost:32768')
+                self.client = AsyncIOMotorClient(f'mongodb://{setting.get("host")}:{setting.get("port")}')
                 self.client.server_info()
                 self.db_wells = self.client.data_wells
                 self.db_users = self.client.data_users
