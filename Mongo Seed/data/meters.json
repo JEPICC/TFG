@@ -1,0 +1,335 @@
+[
+  {"_id": {
+    "$oid": "656008d0228cbb8634b80851"
+  },
+    "idpozo": "655ffae346cf3a8c69e22378",
+    "tag": "VES-01T",
+    "unidad_medida": "°C",
+    "marca": "Meter C&A",
+    "modelo": "Pressure 2000",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-08-05T00:00:00"
+  },
+  {"_id": {
+    "$oid": "656008ec228cbb8634b80852"
+  },
+    "idpozo": "655ffae346cf3a8c69e22378",
+    "tag": "VES-01P",
+    "unidad_medida": "Barg",
+    "marca": "Meter C&A",
+    "modelo": "Pressure 2000",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-08-05T00:00:00"
+  },
+  {"_id": {
+    "$oid": "6560090a228cbb8634b80853"
+  },
+    "idpozo": "655ffae346cf3a8c69e22378",
+    "tag": "VES-01F",
+    "unidad_medida": "m3/d",
+    "marca": "Meter C&A",
+    "modelo": "Flow 2000",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-08-05T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600a35228cbb8634b80854"
+  },
+    "idpozo": "655ffbc446cf3a8c69e22379",
+    "tag": "VES-02F",
+    "unidad_medida": "m3/d",
+    "marca": "Meter C&A",
+    "modelo": "Flow 2000",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-08-06T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600a4f228cbb8634b80855"
+  },
+    "idpozo": "655ffbc446cf3a8c69e22379",
+    "tag": "VES-02T",
+    "unidad_medida": "°C",
+    "marca": "Meter C&A",
+    "modelo": "Temperature 2000",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-08-06T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600a62228cbb8634b80856"
+  },
+    "idpozo": "655ffbc446cf3a8c69e22379",
+    "tag": "VES-02P",
+    "unidad_medida": "Barg",
+    "marca": "Meter C&A",
+    "modelo": "Pressure 2000",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-08-06T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600a8f228cbb8634b80857"
+  },
+
+    "idpozo": "655ffc6646cf3a8c69e2237a",
+    "tag": "VES-03P",
+    "unidad_medida": "Barg",
+    "marca": "Meter C&A",
+    "modelo": "Pressure 2000",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-08-07T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600aa2228cbb8634b80858"
+  },
+
+    "idpozo": "655ffc6646cf3a8c69e2237a",
+    "tag": "VES-03T",
+    "unidad_medida": "°C",
+    "marca": "Meter C&A",
+    "modelo": "Temperature 2000",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-08-07T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600aaf228cbb8634b80859"
+  },
+
+    "idpozo": "655ffc6646cf3a8c69e2237a",
+    "tag": "VES-03F",
+    "unidad_medida": "m3/d",
+    "marca": "Meter C&A",
+    "modelo": "Flow 2000",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-08-07T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600ae4228cbb8634b8085a"
+  },
+    "idpozo": "655ffcea46cf3a8c69e2237b",
+    "tag": "VES-04F",
+    "unidad_medida": "m3/d",
+    "marca": "Meter C&A",
+    "modelo": "Flow 2000",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-10T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600aff228cbb8634b8085b"
+  },
+    "idpozo": "655ffcea46cf3a8c69e2237b",
+    "tag": "VES-04P",
+    "unidad_medida": "Barg",
+    "marca": "Meter C&A",
+    "modelo": "Pressure 2000",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-10T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600b10228cbb8634b8085c"
+  },
+    "idpozo": "655ffcea46cf3a8c69e2237b",
+    "tag": "VES-04T",
+    "unidad_medida": "°C",
+    "marca": "Meter C&A",
+    "modelo": "Temperature 2000",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-10T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600b30228cbb8634b8085d"
+  },
+    "idpozo": "655ffd6a46cf3a8c69e2237c",
+    "tag": "VES-05T",
+    "unidad_medida": "°C",
+    "marca": "Meter C&A",
+    "modelo": "Temperature 2000",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-12T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600b40228cbb8634b8085e"
+  },
+    "idpozo": "655ffd6a46cf3a8c69e2237c",
+    "tag": "VES-05P",
+    "unidad_medida": "Barg",
+    "marca": "Meter C&A",
+    "modelo": "Pressure 2000",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-12T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600b4a228cbb8634b8085f"
+  },
+    "idpozo": "655ffd6a46cf3a8c69e2237c",
+    "tag": "VES-05F",
+    "unidad_medida": "m3/d",
+    "marca": "Meter C&A",
+    "modelo": "Flow 2000",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-12T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600b98228cbb8634b80860"
+  },
+    "idpozo": "655ffe3546cf3a8c69e2237d",
+    "tag": "RSA-01F",
+    "unidad_medida": "m3/d",
+    "marca": "ProWells",
+    "modelo": "IT 600",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-15T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600ba6228cbb8634b80861"
+  },
+    "idpozo": "655ffe3546cf3a8c69e2237d",
+    "tag": "RSA-01T",
+    "unidad_medida": "°C",
+    "marca": "ProWells",
+    "modelo": "IT 600",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-15T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600baf228cbb8634b80862"
+  },
+    "idpozo": "655ffe3546cf3a8c69e2237d",
+    "tag": "RSA-01P",
+    "unidad_medida": "Barg",
+    "marca": "ProWells",
+    "modelo": "IT 600",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-15T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600bc8228cbb8634b80863"
+  },
+    "idpozo": "655fff9546cf3a8c69e2237e",
+    "tag": "RSA-02P",
+    "unidad_medida": "Barg",
+    "marca": "ProWells",
+    "modelo": "IT 600",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-18T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600bd2228cbb8634b80864"
+  },
+    "idpozo": "655fff9546cf3a8c69e2237e",
+    "tag": "RSA-02T",
+    "unidad_medida": "°C",
+    "marca": "ProWells",
+    "modelo": "IT 600",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-18T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600bdc228cbb8634b80865"
+  },
+    "idpozo": "655fff9546cf3a8c69e2237e",
+    "tag": "RSA-02F",
+    "unidad_medida": "m3/d",
+    "marca": "ProWells",
+    "modelo": "IT 600",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-18T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600bea228cbb8634b80866"
+  },
+    "idpozo": "655ffffc46cf3a8c69e2237f",
+    "tag": "RSA-03F",
+    "unidad_medida": "m3/d",
+    "marca": "ProWells",
+    "modelo": "IT 600",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-18T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600bf4228cbb8634b80867"
+  },
+    "idpozo": "655ffffc46cf3a8c69e2237f",
+    "tag": "RSA-03P",
+    "unidad_medida": "Barg",
+    "marca": "ProWells",
+    "modelo": "IT 600",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-18T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600bfc228cbb8634b80868"
+  },
+    "idpozo": "655ffffc46cf3a8c69e2237f",
+    "tag": "RSA-03T",
+    "unidad_medida": "°C",
+    "marca": "ProWells",
+    "modelo": "IT 600",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-18T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600c08228cbb8634b80869"
+  },
+    "idpozo": "6560003946cf3a8c69e22380",
+    "tag": "RSA-04T",
+    "unidad_medida": "°C",
+    "marca": "ProWells",
+    "modelo": "IT 600",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-19T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600c13228cbb8634b8086a"
+  },
+    "idpozo": "6560003946cf3a8c69e22380",
+    "tag": "RSA-04F",
+    "unidad_medida": "m3/d",
+    "marca": "ProWells",
+    "modelo": "IT 600",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-19T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600c1b228cbb8634b8086b"
+  },
+    "idpozo": "6560003946cf3a8c69e22380",
+    "tag": "RSA-04P",
+    "unidad_medida": "Barg",
+    "marca": "ProWells",
+    "modelo": "IT 600",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-19T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600c2a228cbb8634b8086c"
+  },
+    "idpozo": "6560009146cf3a8c69e22381",
+    "tag": "RSA-05P",
+    "unidad_medida": "Barg",
+    "marca": "ProWells",
+    "modelo": "IT 600",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-20T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600c32228cbb8634b8086d"
+  },
+    "idpozo": "6560009146cf3a8c69e22381",
+    "tag": "RSA-05F",
+    "unidad_medida": "m3/d",
+    "marca": "ProWells",
+    "modelo": "IT 600",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-20T00:00:00"
+  },
+  {"_id": {
+    "$oid": "65600c3c228cbb8634b8086e"
+  },
+    "idpozo": "6560009146cf3a8c69e22381",
+    "tag": "RSA-05T",
+    "unidad_medida": "°C",
+    "marca": "ProWells",
+    "modelo": "IT 600",
+    "proveedor": "Mediciones S.A",
+    "fecha_instalacion": "2023-07-20T00:00:00"
+  }
+]
