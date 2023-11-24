@@ -30,7 +30,7 @@ class Wells(BaseModel):
     id: PyObjectId = Field(alias='_id', default=None)
     sigla: str
     area : str
-    cod_area : Optional[int] = None
+    cod_area : Optional[str] = None
     empresa : str
     yacimiento : str
     cod_yacimiento : str
@@ -56,7 +56,7 @@ class Wells(BaseModel):
 class WellsUpdate(BaseModel):
     sigla: Optional[str] = None
     area : Optional[str] = None
-    cod_area : Optional[int] = None
+    cod_area : Optional[str] = None
     empresa : Optional[str] = None
     yacimiento : Optional[str] = None
     cod_yacimiento : Optional[str] = None 

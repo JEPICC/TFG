@@ -4,6 +4,11 @@ services:
     image: mongo:7.0.3
     ports:
       - '27017:27017'
+      
+  mongo_seed:
+    build: ./Mongo Seed
+    links:
+      - mongo
 
   backend:
     build: ./Backend
