@@ -46,8 +46,8 @@
 ## Tabla de contenidos:
 
 - [Objetivo del Prototipo](#objetivo-del-prototipo)
-- [Guía de usuario](#guía-de-usuario)
 - [Guía de instalación](#guía-de-instalación)
+- [Guía de usuario](#guía-de-usuario)
 - [Dependencias](#dependencias)
 <!-- - [Información adicional](#información-adicional)
 - [Licencia](#licencia) -->
@@ -57,10 +57,6 @@
 
 Desarrollar un sistema que implemente los sensores de medición en los pozos,
 los transmita por comunicación inalámbrica, los almacene en una base de datos para luego, publicar la información y sea consumida de diferentes aplicaciones internas y externas a la compañía.
-
-## Guía de usuario
-
-En construccion...
 
 ## Guía de instalación
 
@@ -84,13 +80,30 @@ Luego deberas ejecutar el comando "docker-compose" para construir la aplicacion:
 docker-compose up
 ```
 
-El servidor API se ejecutar en el puerto 8000, y podras ingresar desde el nagador desde la siguiente direccion:
+## Guía de Usuario
+
+### Backend
+
+El servidor API se ejecutar en el puerto 8000, y podras ingresar desde el navegador a la documentacion de la api, desde la siguiente direccion:
 ```
-localhost:8000
+http://localhost:8000
+```
+Para generar datos de prueba, deberas ingresa a la siguiente direccion:
+```
+http://localhost:8000/services/generate
+```
+Para borrar los datos de prueba, deberas ingresa a la siguiente direccion:
+```
+http://localhost:8000/services/drop
+```
+### Frontend
+Para ingresar a la aplicacíon de React, deberas ingresar en el navegador a:
+```
+http://localhost:5173/
 ```
 
 
-### Dependencias
+## Dependencias
 A continuacion se describen los Herramientas, Frameworks y Librerias utilizadas en el proyecto:
 
   * [![Docker][Docker]][Docker-url]
@@ -102,6 +115,9 @@ A continuacion se describen los Herramientas, Frameworks y Librerias utilizadas 
   * [![React.js][React.js]][React-url]
   * [![Visual Studio Code][Visual Studio Code]][Visual Studio Code-url]
 
+## Licencia 📄
+
+Este proyecto está bajo la Licencia (MIT) - mira el archivo [LICENSE](LICENSE) para detalles
 
 <!-- ## Autor/es
 
@@ -110,16 +126,7 @@ Nombra a el/los autor/es original/es. Consulta con ellos antes de publicar un em
 <!-- ## Información adicional
 
 Esta es la sección que permite agregar más información de contexto al proyecto como alguna web de relevancia, proyectos similares o que hayan usado la misma tecnología.
-
-## Licencia 
-
-La licencia especifica los permisos y las condiciones de uso que el desarrollador otorga a otros desarrolladores que usen y/o modifiquen la herramienta digital.
-
-Incluye en esta sección una nota con el tipo de licencia otorgado a esta herramienta digital. El texto de la licencia debe estar incluído en un archivo *LICENSE.md* o *LICENSE.txt* en la raíz del repositorio.
-
-Si desconoces qué tipos de licencias existen y cuál es la mejor para cada caso, te recomendamos visitar la página https://choosealicense.com/.
-
-Si la herramienta que estás publicando con la iniciativa Código para el Desarrollo ha sido financiada por el BID, te invitamos a revisar la [licencia oficial del banco para publicar software](https://github.com/EL-BID/Plantilla-de-repositorio/blob/master/LICENSE.md) -->
+ -->
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
