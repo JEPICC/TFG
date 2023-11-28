@@ -8,6 +8,7 @@ PyObjectId = Annotated[str, BeforeValidator(str)]
 schema_descrption = {"example": {
                 'idpozo': 'Identificador de pozo',
                 'tag' : 'Identificador de medidor',
+                'tipo': 'press / temp / flow',
                 'unidad_medida' : 'UOM',
                 'marca' : 'Marca del equipo',
                 'modelo' : 'Modelo del equipo',
@@ -18,6 +19,7 @@ class Meters(BaseModel):
     id: PyObjectId = Field(alias='_id', default=None)
     idpozo: str
     tag : str
+    tipo: str
     unidad_medida : str
     marca : Optional[str] = None
     modelo : Optional[str] = None
@@ -29,10 +31,12 @@ class Meters(BaseModel):
         arbitrary_types_allowed=True,
         json_schema_extra=schema_descrption
     )
+    
 
 class MetersUpdate(BaseModel):
     idpozo: Optional[str] = None
     tag : Optional[str] = None
+    tipo: Optional[str] = None
     unidad_medida : Optional[str] = None
     marca : Optional[str] = None
     modelo : Optional[str] = None

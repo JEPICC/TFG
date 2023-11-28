@@ -4,6 +4,7 @@ services:
     image: mongo:7.0.3
     ports:
       - '27017:27017'
+    container_name: mongo_bd
       
   mongo_seed:
     build: ./Mongo Seed
@@ -19,6 +20,12 @@ services:
     environment:
       - MONGODB_HOST=mongo
       - MONGODB_PORT=27017
+    container_name: fast_api
 
-
-  
+  frontend:
+    build: ./Frontend
+    ports:
+    - "5173:5173"
+    links:
+      - backend
+    container_name: react_app

@@ -4,6 +4,9 @@ from datetime import datetime
 
 collection = db.db_wells.values
 
+async def get_all_values_by_meter(id_meter):
+    return collection.find({'idmedidor': id_meter})
+
 async def get_one_value_id(id):
     value = await collection.find_one({'_id': ObjectId(id)})
     return value

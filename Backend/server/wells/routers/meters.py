@@ -1,6 +1,8 @@
 from fastapi import APIRouter, HTTPException
 from server.wells.schemas.meters import Meters, MetersUpdate
-from server.wells.models.meters import get_all_meter, get_one_meter_id, create_meter, update_meter, delete_meter
+from server.wells.models.meters import get_all_meter, get_meters_by_well, get_one_meter_id, create_meter, update_meter, delete_meter
+
+from server.database.seed_data import generate_seed_data, drop_collection
 
 meters = APIRouter(
     prefix="/meters",
@@ -12,10 +14,29 @@ meters = APIRouter(
 async def get_meters():
     cursor = await get_all_meter()
     meters = [Meters(**doc) async for doc in cursor]
-    return meters
+    if meters:
+        return meters
+    raise HTTPException(400, 'Somethinh went wrong!!!')
+
+@meters.get('/check')
+async def get_check():
+    await generate_seed_data()
+    
+@meters.get('/drop')
+async def drop():
+    await drop_collection()
+
+
+@meters.get('/well/{id}')
+async def get_all_meters_well(id : str):
+    cursor = await get_meters_by_well(id)
+    meters = [Meters(**doc) async for doc in cursor]
+    if meters:
+        return meters
+    raise HTTPException(400, 'Somethinh went wrong!!!')
 
 @meters.get('/{id}', response_model=Meters)
-async def get_well(id:str):
+async def get_meter(id:str):
     meter = await get_one_meter_id(id)
     if meter:
         return meter

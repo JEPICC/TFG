@@ -13,7 +13,8 @@ export default function Well() {
     if (id) {
       const response = await fetch("http://localhost:8000/meters/well/" + id);
       const data = await response.json();
-      setMeters(data);
+      const sorted_data = data.sort((o1, o2) => (o1.tipo > o2.tipo) ? 1 : -1)
+      setMeters(sorted_data);
     }
   };
 
@@ -25,9 +26,9 @@ export default function Well() {
     <>
       <h2>{sigla}</h2>
       <List>
-        {meters.map((meter, index) => (
+        {meters.map((meter) => (
           <ListItem key={meter._id} disablePadding>
-            <SingleLineChart meter={meter} index={index} />
+            <SingleLineChart meter={meter}/>
           </ListItem>
         ))}
       </List>

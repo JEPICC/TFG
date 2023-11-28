@@ -31,7 +31,7 @@ export default function SingleLineChart2(prop) {
       });
   }, [prop.meter._id]);
 
-  if (values.length == 0) return "loading...";
+  if (values.length == 0) return "";
 
   return (
     <LineChart

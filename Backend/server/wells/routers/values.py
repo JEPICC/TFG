@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from datetime import datetime
 from bson import ObjectId
 from server.wells.schemas.values import Values, ValuesResponse
-from server.wells.models.values import get_one_value_id, get_all_values, get_interval_values, create_value
+from server.wells.models.values import get_all_values_by_meter, get_one_value_id, get_all_values, get_interval_values, create_value
 from server.wells.services.well_prod import get_data
 
 values = APIRouter(
@@ -25,10 +25,18 @@ async def get_value(id: str):
     raise HTTPException(404, f'value not found {id}')
 
 @values.get('/time/{id}')
-async def get_value_by_meter(id:str, init_time: datetime, end_time: datetime | None = None):
+async def get_value_by_meter_timed(id:str, init_time: datetime, end_time: datetime | None = None):
     cursor = await get_interval_values(id, init_time, end_time)
     values = [Values(**doc) async for doc in cursor]
     print(values)
+    if values:
+        return values
+    raise HTTPException(404, f'value not found {id}')
+
+@values.get('/meter/{id}')
+async def get_value_by_meter(id:str):
+    cursor = await get_all_values_by_meter(id)
+    values = [Values(**doc) async for doc in cursor]
     if values:
         return values
     raise HTTPException(404, f'value not found {id}')

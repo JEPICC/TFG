@@ -12,9 +12,11 @@ async def create_meter(meter):
     create_meter = await collection.find_one({'_id': new_meter.inserted_id})
     return create_meter
 
+# async def get_all_meter_by_well(id):
+#     return collection.find({'idpozo': id})
+
 async def get_all_meter():
     cursor = collection.find()
-    # meters = [Meters(**doc) async for doc in collection.find()]
     return cursor
 
 async def get_meters_by_well(id_well):

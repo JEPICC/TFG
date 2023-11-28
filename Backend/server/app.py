@@ -9,7 +9,8 @@ from server.users.router import users
 from server.wells.routers.wells import wells
 from server.wells.routers.meters import meters
 from server.wells.routers.values import values
-from server.wells.routers.services import services
+from server.wells.services.routes import services
+
 
 
 @asynccontextmanager
