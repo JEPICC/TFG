@@ -5,23 +5,24 @@ import ListItemText from "@mui/material/ListItemText";
 import Collapse from "@mui/material/Collapse";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import RouterIcon from '@mui/icons-material/Router';
-import OilBarrelIcon from '@mui/icons-material/OilBarrel';
-import SendIcon from '@mui/icons-material/Send';
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import RouterIcon from "@mui/icons-material/Router";
+import OilBarrelIcon from "@mui/icons-material/OilBarrel";
+import SendIcon from "@mui/icons-material/Send";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
-export default function NestedList() {
-  const [wells, setWells] = useState([])
+export default function MenuList() {
+  const [wells, setWells] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch("http://localhost:8000/wells")
-    .then( response => response.json())
-    .then( data => setWells(data))
-    .catch(error => console.log(error))
-  },[])
-
+      .then((response) => response.json())
+      .then((data) =>
+        setWells(data.sort((a, b) => (a.sigla < b.sigla ? -1 : 1)))
+      )
+      .catch((error) => console.log(error));
+  }, []);
 
   const [open, setOpen] = useState(false);
 
@@ -56,18 +57,20 @@ export default function NestedList() {
       </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          {wells.sort((a,b)=> a.sigla < b.sigla ? -1 : 1)
-          .map((item)=>(
-          <ListItemButton component={NavLink} to="/well" 
-             key={item._id}
-             sx={{ pl: 4 }}
-             state={{wid:item._id, sigla: item.sigla}}>
-            <ListItemIcon>
-              <SendIcon />
-            </ListItemIcon>
-            <ListItemText primary= {item.sigla} />
-          </ListItemButton>
-        ))}
+          {wells.map((item) => (
+            <ListItemButton
+              component={NavLink}
+              to="/well"
+              key={item._id}
+              sx={{ pl: 4 }}
+              state={{ well: item }}
+            >
+              <ListItemIcon>
+                <SendIcon />
+              </ListItemIcon>
+              <ListItemText primary={item.sigla} />
+            </ListItemButton>
+          ))}
         </List>
       </Collapse>
     </List>
