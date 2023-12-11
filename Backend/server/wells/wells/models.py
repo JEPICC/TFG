@@ -1,6 +1,10 @@
 from bson import ObjectId
 from server.database import db
-from server.database.mongo_pipelines import daily_prod
+from server.database.mongo_pipelines import (
+    daily_prod, 
+    today_prod, 
+    yesterday_prod, 
+    now_prod)
 
 
 collection = db.db_wells.wells
@@ -37,6 +41,18 @@ async def delete_well(id: str):
         return True
     return False
 
+async def get_now_prod():
+    data = await collection.aggregate(now_prod).to_list(length=None)
+    return data
+
 async def get_daily_prod():
     data = await collection.aggregate(daily_prod).to_list(length=None)
+    return data
+
+async def get_today_prod():
+    data = await collection.aggregate(today_prod).to_list(length=None)
+    return data
+
+async def get_yesterday_prod():
+    data = await collection.aggregate(yesterday_prod).to_list(length=None)
     return data

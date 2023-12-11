@@ -6,7 +6,10 @@ from server.wells.wells.models import (
     delete_well, 
     get_one_well_id, 
     update_well, 
-    get_daily_prod)
+    get_daily_prod,
+    get_today_prod,
+    get_yesterday_prod,
+    get_now_prod)
 
 wells = APIRouter(
     prefix="/wells",
@@ -19,11 +22,6 @@ async def get_wells():
     cursor = await get_all_well()
     wells = [Wells(**doc) async for doc in cursor]
     return wells
-
-@wells.get('/daily')
-async def get_daily():
-    response = await get_daily_prod()
-    return response
 
 @wells.get('/{id}', response_model=Wells)
 async def get_well(id: str = Path(... , regex=r'^[0-9a-j]{24}$')):
@@ -53,3 +51,22 @@ async def remove_well(id):
         return dict(detail=f'Object {id} eliminated')
     raise HTTPException(404, f'well not found {id}')
 
+@wells.get('/calculate/now')
+async def get_now():
+    response = await get_now_prod()
+    return response
+
+@wells.get('/calculate/today')
+async def get_today():
+    response = await get_today_prod()
+    return response
+
+@wells.get('/calculate/daily')
+async def get_daily():
+    response = await get_daily_prod()
+    return response
+
+@wells.get('/calculate/yesterday')
+async def get_yesterday():
+    response = await get_yesterday_prod()
+    return response

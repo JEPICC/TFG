@@ -1,5 +1,4 @@
 from server.database import db
-from bson import ObjectId
 
 collection = db.db_wells.antenna_states
 
