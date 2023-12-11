@@ -1,8 +1,8 @@
 from fastapi import APIRouter, HTTPException
 from datetime import datetime
 from bson import ObjectId
-from server.wells.schemas.values import Values, ValuesResponse
-from server.wells.models.values import get_all_values_by_meter, get_one_value_id, get_all_values, get_interval_values, create_value
+from server.wells.meter_values.schemas import Values, ValuesResponse
+from server.wells.meter_values.models import get_all_values_by_meter, get_one_value_id, get_all_values, get_interval_values_by_meter, create_value
 from server.wells.services.well_prod import get_data
 
 values = APIRouter(
@@ -26,7 +26,7 @@ async def get_value(id: str):
 
 @values.get('/time/{id}')
 async def get_value_by_meter_timed(id:str, init_time: datetime, end_time: datetime | None = None):
-    cursor = await get_interval_values(id, init_time, end_time)
+    cursor = await get_interval_values_by_meter(id, init_time, end_time)
     values = [Values(**doc) async for doc in cursor]
     print(values)
     if values:
@@ -43,7 +43,7 @@ async def get_value_by_meter(id:str):
 
 
 @values.post('/', response_model=Values)
-async def save_values(value: Values):
+async def create_new_values(value: Values):
     response = await create_value(value.model_dump())
     if response:
         return response

@@ -6,10 +6,13 @@ from fastapi.responses import JSONResponse, RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.exceptions import ResponseValidationError
 from server.users.router import users
-from server.wells.routers.wells import wells
-from server.wells.routers.meters import meters
-from server.wells.routers.values import values
+from server.wells.wells.routers import wells
+from server.wells.meters.routers import meters
+from server.wells.meter_values.routers import values
+from server.wells.antennas.routers import antennas
+from server.wells.antenna_states.routers import comm
 from server.wells.services.routes import services
+
 
 
 
@@ -34,11 +37,13 @@ app.add_middleware(
     # allow_headers=['*']
 )
 
-app.include_router(users)
+#app.include_router(users)
 app.include_router(wells)
 app.include_router(meters)
 app.include_router(values)
 app.include_router(services)
+app.include_router(antennas)
+app.include_router(comm)
 
 
 @app.get('/')

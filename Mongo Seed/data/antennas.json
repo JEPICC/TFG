@@ -1,0 +1,102 @@
+[
+  {"_id": {
+    "$oid": "657514bbd40e98e01f041429"
+  },
+    "fecha_instalacion": "2023-08-06T00:00:00",
+    "idpozo": "655ffae346cf3a8c69e22378",
+    "marca": "Laird",
+    "modelo": "YF880012",
+    "proveedor": "Mouser Electronic",
+    "tag": "ANT.01.V"
+  },
+  {"_id": {
+    "$oid": "657514c6d40e98e01f04142a"
+  },
+    "fecha_instalacion": "2023-07-15T00:00:00",
+    "idpozo": "655ffe3546cf3a8c69e2237d",
+    "marca": "Laird",
+    "modelo": "YF880012",
+    "proveedor": "Mouser Electronic",
+    "tag": "ANT.01.R"
+  },
+  {"_id": {
+    "$oid": "657514ced40e98e01f04142b"
+  },
+    "fecha_instalacion": "2023-07-18T00:00:00",
+    "idpozo": "655ffffc46cf3a8c69e2237f",
+    "marca": "Laird",
+    "modelo": "YF880012",
+    "proveedor": "Mouser Electronic",
+    "tag": "ANT.03.R"
+  },
+  {"_id": {
+    "$oid": "657514d7d40e98e01f04142c"
+  },
+    "fecha_instalacion": "2023-07-18T00:00:00",
+    "idpozo": "655fff9546cf3a8c69e2237e",
+    "marca": "Laird",
+    "modelo": "YF880012",
+    "proveedor": "Mouser Electronic",
+    "tag": "ANT.02.R"
+  },
+  {"_id": {
+    "$oid": "657514dfd40e98e01f04142d"
+  },
+    "fecha_instalacion": "2023-07-12T00:00:00",
+    "idpozo": "655ffd6a46cf3a8c69e2237c",
+    "marca": "Laird",
+    "modelo": "YF880012",
+    "proveedor": "Mouser Electronic",
+    "tag": "ANT.05.V"
+  },
+  {"_id": {
+    "$oid": "657514e6d40e98e01f04142e"
+  },
+    "fecha_instalacion": "2023-07-10T00:00:00",
+    "idpozo": "655ffcea46cf3a8c69e2237b",
+    "marca": "Laird",
+    "modelo": "YF880012",
+    "proveedor": "Mouser Electronic",
+    "tag": "ANT.04.V"
+  },
+  {"_id": {
+    "$oid": "657514edd40e98e01f04142f"
+  },
+    "fecha_instalacion": "2023-07-19T00:00:00",
+    "idpozo": "6560003946cf3a8c69e22380",
+    "marca": "Laird",
+    "modelo": "YF880012",
+    "proveedor": "Mouser Electronic",
+    "tag": "ANT.04.R"
+  },
+  {"_id": {
+    "$oid": "657514f4d40e98e01f041430"
+  },
+    "fecha_instalacion": "2023-08-06T00:00:00",
+    "idpozo": "655ffbc446cf3a8c69e22379",
+    "marca": "Laird",
+    "modelo": "YF880012",
+    "proveedor": "Mouser Electronic",
+    "tag": "ANT.02.V"
+  },
+  {"_id": {
+    "$oid": "657514fbd40e98e01f041431"
+  },
+    "fecha_instalacion": "2023-08-07T00:00:00",
+    "idpozo": "655ffc6646cf3a8c69e2237a",
+    "marca": "Laird",
+    "modelo": "YF880012",
+    "proveedor": "Mouser Electronic",
+    "tag": "ANT.03.V"
+  },
+  {"_id": {
+    "$oid": "65751502d40e98e01f041432"
+  },
+    "fecha_instalacion": "2023-07-20T00:00:00",
+    "idpozo": "6560009146cf3a8c69e22381",
+    "marca": "Laird",
+    "modelo": "YF880012",
+    "proveedor": "Mouser Electronic",
+    "tag": "ANT.05.R"
+  }
+]

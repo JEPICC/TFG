@@ -16,7 +16,7 @@ class Values(BaseModel):
     id: PyObjectId = Field(alias='_id', default=None)
     idmedidor : str
     timestamp : datetime
-    value: float
+    value: Optional[float] = None
     estado: bool
 
     model_config = ConfigDict(

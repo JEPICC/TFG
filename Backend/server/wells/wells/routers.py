@@ -1,6 +1,12 @@
 from fastapi import APIRouter, HTTPException, Path
-from server.wells.schemas.wells import Wells, WellsUpdate
-from server.wells.models.wells import create_well, get_all_well, delete_well, get_one_well_id, update_well
+from server.wells.wells.schemas import Wells, WellsUpdate
+from server.wells.wells.models import (
+    create_well, 
+    get_all_well, 
+    delete_well, 
+    get_one_well_id, 
+    update_well, 
+    get_daily_prod)
 
 wells = APIRouter(
     prefix="/wells",
@@ -14,6 +20,11 @@ async def get_wells():
     wells = [Wells(**doc) async for doc in cursor]
     return wells
 
+@wells.get('/daily')
+async def get_daily():
+    response = await get_daily_prod()
+    return response
+
 @wells.get('/{id}', response_model=Wells)
 async def get_well(id: str = Path(... , regex=r'^[0-9a-j]{24}$')):
     well = await get_one_well_id(id)
@@ -22,7 +33,7 @@ async def get_well(id: str = Path(... , regex=r'^[0-9a-j]{24}$')):
     raise HTTPException(404, f'well not found {id}')
 
 @wells.post('/', response_model=Wells)
-async def save_well(well: Wells):
+async def create_new_well(well: Wells):
     response = await create_well(well.model_dump())
     if response:
         return response
@@ -41,3 +52,4 @@ async def remove_well(id):
     if response:
         return dict(detail=f'Object {id} eliminated')
     raise HTTPException(404, f'well not found {id}')
+

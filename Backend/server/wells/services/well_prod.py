@@ -1,6 +1,18 @@
 from server.database import db
 from bson import ObjectId
 
+# async def get_antenna_failures():
+#     data = await db.db_wells.antennas.aggregate(antenna_failures).to_list(length=None)
+#     return data
+
+# async def get_antenna_states():
+#     data = await db.db_wells.antennas.aggregate(antenna_states).to_list(length=None)
+#     return data
+
+# async def get_daily_prod():
+#     data = await db.db_wells.wells.aggregate(daily_prod).to_list(length=None)
+#     return data
+
 async def get_data(id):
     data = await db.db_wells.wells.aggregate([
     {
@@ -41,7 +53,7 @@ async def get_data(id):
     },
     {
         '$project': 
-            {'_id': 1, 'meters._id':1, 'meters.tag':1, 'values.timestamp':1, 'values.value': 1}
+            {'_id': 0, 'meters._id':1, 'meters.tag':1, 'values.timestamp':1, 'values.value': 1}
     },
     {
         "$lookup": {
@@ -73,7 +85,6 @@ async def get_data(id):
     },
     # {"$unwind": "$values"} 
     ]).to_list(None)
-
 
     return data
 
