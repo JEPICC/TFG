@@ -19,7 +19,7 @@ export default function NavBar() {
       >
         <Toolbar>
           <Typography variant="h4" noWrap component="div">
-            Panel Principal
+            Seguimiento de Pozos
           </Typography>
         </Toolbar>
       </AppBar>

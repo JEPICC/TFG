@@ -38,12 +38,12 @@ antenna_states = [
     {"$sort": {"timestamp": -1}},
     {"$group": {
         "_id": {"ant": "$tag"},
-        "id": {"$first": "$tag"},
-        "time": {"$first": "$values.timestamp"},
-        "state": {"$first": "$values.estado"},
+        "id": {"$last": "$tag"},
+        "time": {"$last": "$values.timestamp"},
+        "state": {"$last": "$values.estado"},
     }},
-    {"$project":{"_id": 0}},
-    ]
+    {"$project":{"_id":0}}
+]
 
 daily_prod = [
     { "$addFields": { "wellsID": { "$toString": "$_id" }}},
@@ -93,10 +93,13 @@ today_prod = [
         "as": "values"}},
     { "$unwind": "$values"},
     {"$match": 
-     {"values.timestamp": {"$lte": date.today().isoformat()}},        
+     {"values.timestamp": {"$gte": date.today().isoformat()}},        
     },
+    {"$addFields": {"values.flowHours": {"$divide": ["$values.value", 24]}}},
+    # {"$project":{"_id": 0, "meters._id": 0, "values._id": 0}},
+    # {"$limit": 2}
     { "$group": {"_id": {"tag": "$sigla", },
-                 "acumm": { "$sum": {"$divide": ["$values.value", 24]} }
+                 "acumm": { "$sum": "$values.flowHours"}
                  }
     },
     { "$group": {"_id": "today",
@@ -155,11 +158,12 @@ now_prod = [
     { "$unwind": "$values"},
     { "$sort": { "values.timestamp": 1 }},
     {"$group":{
-           "_id": "$values.value",
+           "_id": "$sigla",
+           "value": { "$last": "$values.value" },
            "last": { "$last": "$values.timestamp" }
     }},
     { "$group": {"_id": "now",
-                 "flow": { "$sum": "$_id" }
+                 "flow": { "$sum": "$value" }
                  }
     }
 ]
