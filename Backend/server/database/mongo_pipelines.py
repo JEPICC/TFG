@@ -1,4 +1,46 @@
-from datetime import date, timedelta 
+from datetime import date, timedelta, datetime
+
+today_hours_prod =[
+    { "$addFields": { "wellsID": { "$toString": "$_id" }}},
+    { "$lookup": {
+        "from": "meters",
+        "foreignField": "idpozo",
+        "localField": "wellsID",
+        "as": "meters"}},
+    { "$unwind": "$meters"},
+    { "$match" : { "meters.tipo" : "flow" } },
+    { "$addFields": { "meterID": { "$toString": "$meters._id" }}},
+    { "$lookup": {
+        "from": "values",
+        "foreignField": "idmedidor",
+        "localField": "meterID",
+        "as": "values"}},
+    { "$unwind": "$values"},
+    {"$match": 
+     {"values.timestamp": {"$gte": (datetime.now() - timedelta(hours=12)).isoformat()}},        
+    },
+    # {"$addFields": {"values.flowHours": {"$divide": ["$values.value", 24]}}},
+    { "$group": {"_id": {
+        "date" : {"$toDate": "$values.timestamp"},
+        "hour" : {"$hour":{"$toDate": "$values.timestamp"}},
+        "interval" : {
+            "$subtract": [
+                {"$minute":{"$toDate": "$values.timestamp"}},
+                { "$mod": [{ "$minute":{"$toDate": "$values.timestamp"}}, 15] }
+            ]
+        },
+        },
+                 "acumm": { "$sum": "$values.value"}
+                 }
+    },
+    {"$sort": {"_id.date":1}},
+    # { "$group": {"_id": "today",
+    #              "accumulated": { "$sum": "$acumm" }
+    #              }
+    # },
+    # {"$project":{"_id": 0, "meters._id": 0, "values._id": 0}},
+    # {"$limit": 2}
+]
 
 antenna_failures = [
         { "$addFields": { "antennasID": { "$toString": "$_id" }}},
@@ -61,7 +103,12 @@ daily_prod = [
         "localField": "meterID",
         "as": "values"}},
     { "$unwind": "$values"},
-
+    {"$match": {
+        "$and": [
+            {"values.timestamp": {"$gte": (date.today() - timedelta(days = 8)).isoformat()}},
+            {"values.timestamp": {"$lt": (date.today() - timedelta(days = 1)).isoformat()}},
+        ]
+    }},
     { "$group": {"_id": {"tag": "$sigla", 
                          "dia": { "$dateToString": {
                              "format":"%d-%m-%Y", 
@@ -73,7 +120,7 @@ daily_prod = [
                  "daily": { "$sum": "$promedio" }
                  }
     },
-    {"$sort": {"_id":-1}},
+    {"$sort": {"_id":1}},
 ]
 
 today_prod = [

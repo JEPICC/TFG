@@ -4,7 +4,8 @@ from server.database.mongo_pipelines import (
     daily_prod, 
     today_prod, 
     yesterday_prod, 
-    now_prod)
+    now_prod,
+    today_hours_prod)
 
 
 collection = db.db_wells.wells
@@ -51,6 +52,10 @@ async def get_daily_prod():
 
 async def get_today_prod():
     data = await collection.aggregate(today_prod).to_list(length=None)
+    return data
+
+async def get_today_hours_prod():
+    data = await collection.aggregate(today_hours_prod).to_list(length=None)
     return data
 
 async def get_yesterday_prod():

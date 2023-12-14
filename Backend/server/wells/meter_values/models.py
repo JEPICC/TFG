@@ -16,9 +16,9 @@ async def create_value(values):
     create_values = await collection.find_one({'_id': new_values.inserted_id})
     return create_values
 
-async def get_interval_values_by_meter(id, start_time, end_time):
+async def get_interval_values_by_meter(id_meter, start_time, end_time):
     if end_time is None:
-        return collection.find({'idmedidor': id, 'timestamp': {'$gte': start_time}})
+        return collection.find({'idmedidor': id_meter, 'timestamp': {'$gte': start_time}})
     if end_time > datetime.now():
         end_time = datetime.now()
     return collection.find({'idmedidor': id, 'timestamp': {'$gte': start_time, '$lt': end_time}})

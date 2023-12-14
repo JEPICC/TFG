@@ -9,7 +9,8 @@ from server.wells.wells.models import (
     get_daily_prod,
     get_today_prod,
     get_yesterday_prod,
-    get_now_prod)
+    get_now_prod, 
+    get_today_hours_prod)
 
 wells = APIRouter(
     prefix="/wells",
@@ -59,6 +60,11 @@ async def get_now():
 @wells.get('/calculate/today')
 async def get_today():
     response = await get_today_prod()
+    return response
+
+@wells.get('/calculate/todayHours')
+async def get_today_hours():
+    response = await get_today_hours_prod()
     return response
 
 @wells.get('/calculate/daily')

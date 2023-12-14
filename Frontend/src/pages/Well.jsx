@@ -1,7 +1,7 @@
 import { Box, List, ListItem, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import SingleLineChart from "../components/charts/SingleLineChart";
+import SingleLineChart from "../components/charts/SingleLineChartWell";
 import WellDialog from "../components/WellDialog";
 
 export default function Well() {

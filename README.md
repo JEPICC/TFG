@@ -48,6 +48,7 @@
 - [Objetivo del Prototipo](#objetivo-del-prototipo)
 - [Guía de instalación](#guía-de-instalación)
 - [Guía de usuario](#guía-de-usuario)
+- [Demostración](#demostración)
 - [Dependencias](#dependencias)
 <!-- - [Información adicional](#información-adicional)
 - [Licencia](#licencia) -->
@@ -101,7 +102,8 @@ Para ingresar a la aplicacíon de React, deberas ingresar en el navegador a:
 ```
 http://localhost:5173/
 ```
-
+## Demostración
+Video demo de aplicación [VIDEO](Demostracion.webm) para detalles
 
 ## Dependencias
 A continuacion se describen los Herramientas, Frameworks y Librerias utilizadas en el proyecto:

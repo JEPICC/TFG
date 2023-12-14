@@ -25,7 +25,7 @@ async def get_value(id: str):
     raise HTTPException(404, f'value not found {id}')
 
 @values.get('/time/{id}')
-async def get_value_by_meter_timed(id:str, init_time: datetime, end_time: datetime | None = None):
+async def get_value_by_meter_timed(id:str, init_time: str, end_time: str | None = None):
     cursor = await get_interval_values_by_meter(id, init_time, end_time)
     values = [Values(**doc) async for doc in cursor]
     print(values)
